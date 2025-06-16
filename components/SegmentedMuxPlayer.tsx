@@ -73,16 +73,15 @@ export default function SegmentedMuxPlayer() {
       }}
     >
       <h2 style={{ color: "#fff", marginBottom: "1rem" }}>{currentSegment.label}</h2>
-      <MuxPlayer
+     <MuxPlayer
         ref={playerRef}
         playbackId={PLAYBACK_ID}
         streamType="on-demand"
         autoPlay
         muted
-        // 🔥 omitimos `controls` para que NO se muestren
-        // 🔥 usamos atributos vacíos como booleanos HTML
-        nohotkeys
-        defaulthiddencaptions
+        controls={false}
+        noHotkeys
+        defaultHiddenCaptions
         style={{
           width: "100%",
           maxWidth: 900,
@@ -90,6 +89,7 @@ export default function SegmentedMuxPlayer() {
           outline: "none",
         }}
       />
+
     </div>
   );
 }
