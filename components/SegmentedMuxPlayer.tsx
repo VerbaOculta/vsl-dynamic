@@ -9,11 +9,10 @@ const segments = [
   { label: "Fragmento 25", start: 10, end: 17 },
 ];
 
-// Reemplaza este ID por tu verdadero playbackId de Mux
-const PLAYBACK_ID = "TU_PLAYBACK_ID";
+const PLAYBACK_ID = "PLLJ4CuL9LMofLBm5MZZ2Mp02NDr3y7faGatChWrqPb4";
 
 export default function SegmentedMuxPlayer() {
-  const playerRef = useRef<any>(null); // ← corregido: tipado relajado
+  const playerRef = useRef<any>(null);
   const [currentSegmentIndex, setCurrentSegmentIndex] = useState(0);
   const [isSeeking, setIsSeeking] = useState(false);
 
@@ -24,8 +23,7 @@ export default function SegmentedMuxPlayer() {
     if (!player) return;
 
     const handleTimeUpdate = () => {
-      const currentTime = player.currentTime;
-      if (!isSeeking && currentTime >= currentSegment.end) {
+      if (!isSeeking && player.currentTime >= currentSegment.end) {
         const nextIndex = currentSegmentIndex + 1;
         if (nextIndex < segments.length) {
           setIsSeeking(true);
@@ -52,7 +50,6 @@ export default function SegmentedMuxPlayer() {
     player.addEventListener("seeked", handleSeeked);
     player.addEventListener("loadedmetadata", handleLoadedMetadata);
 
-    // Si el player ya está cargado, actualizar currentTime al vuelo
     if (player.readyState >= 1) {
       player.currentTime = currentSegment.start;
       player.play();
@@ -66,17 +63,32 @@ export default function SegmentedMuxPlayer() {
   }, [currentSegmentIndex]);
 
   return (
-    <div style={{ padding: "2rem", textAlign: "center" }}>
-      <h2>{currentSegment.label}</h2>
+    <div
+      style={{
+        padding: "2rem",
+        textAlign: "center",
+        backgroundColor: "#000",
+        minHeight: "100vh",
+        cursor: "none",
+      }}
+    >
+      <h2 style={{ color: "#fff", marginBottom: "1rem" }}>{currentSegment.label}</h2>
       <MuxPlayer
         ref={playerRef}
-        playbackId="PLLJ4CuL9LMofLBm5MZZ2Mp02NDr3y7faGatChWrqPb4"
+        playbackId={PLAYBACK_ID}
         streamType="on-demand"
         autoPlay
         muted
-        style={{ width: "100%", maxWidth: 800, borderRadius: 12 }}
+        style={{
+          width: "100%",
+          maxWidth: 900,
+          borderRadius: 12,
+          outline: "none",
+        }}
+        nohotkeys
+        noautoload
+        defaultHiddenCaptions
       />
     </div>
   );
 }
-
