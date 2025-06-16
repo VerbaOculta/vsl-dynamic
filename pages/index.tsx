@@ -1,12 +1,12 @@
-import SegmentedPlayer from "../components/SegmentedPlayer";
+import SegmentedMuxPlayer from "../components/SegmentedMuxPlayer";
 
 export default function Home() {
   return (
     <main>
-      <h1 style={{ padding: "2rem", textAlign: "center" }}>
-        🎥 VSL desde un solo video (por tramos)
+      <h1 style={{ textAlign: "center", padding: "2rem" }}>
+        🎥 VSL Segmentado desde un solo asset
       </h1>
-      <SegmentedPlayer />
+      <SegmentedMuxPlayer />
     </main>
   );
 }
