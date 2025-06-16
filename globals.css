@@ -1,10 +1,27 @@
-// app/globals.css
-@import "@mux/mux-player/themes/mux-player.css"; /* si usas tema */
-mux-player::part(control-bar),
-mux-player::part(center-controls),
-mux-player::part(controls-container) {
-  display: none !important;
-}
 mux-player {
-  pointer-events: none;
+  --controls: none;
+  --dialog: none;
+  --loading-indicator: none;
+
+  --play-button: none;
+  --live-button: none;
+  --seek-backward-button: none;
+  --seek-forward-button: none;
+  --mute-button: none;
+  --captions-button: none;
+  --airplay-button: none;
+  --pip-button: none;
+  --fullscreen-button: none;
+  --cast-button: none;
+  --playback-rate-button: none;
+  --volume-range: none;
+  --time-range: none;
+  --time-display: none;
+  --duration-display: none;
+  --rendition-menu-button: none;
+
+  --center-controls: none;
+  --bottom-play-button: none;
+
+  pointer-events: none; /* Opcional: desactiva interacción */
 }
