@@ -3,24 +3,23 @@
 import { useEffect, useRef, useState } from "react";
 import "@mux/mux-player"; // web component registration
 
-useEffect(() => {
-  const player = document.querySelector("mux-player");
-  if (player) {
-    player.style.setProperty("--controls", "none");
-    player.style.setProperty("--dialog", "none");
-    player.style.setProperty("--loading-indicator", "none");
-    player.style.setProperty("--play-button", "none");
-    player.style.setProperty("--center-controls", "none");
-    player.style.setProperty("--bottom-play-button", "none");
-    player.style.setProperty("--seek-backward-button", "none");
-    player.style.setProperty("--seek-forward-button", "none");
-    player.style.setProperty("--fullscreen-button", "none");
-    player.style.setProperty("--volume-range", "none");
-    player.style.setProperty("--time-range", "none");
-    player.style.setProperty("--time-display", "none");
-    player.style.setProperty("--duration-display", "none");
-  }
-}, []);
+const player = document.querySelector("mux-player");
+if (player instanceof HTMLElement) {
+  player.style.setProperty("--controls", "none");
+  player.style.setProperty("--dialog", "none");
+  player.style.setProperty("--loading-indicator", "none");
+  player.style.setProperty("--play-button", "none");
+  player.style.setProperty("--center-controls", "none");
+  player.style.setProperty("--bottom-play-button", "none");
+  player.style.setProperty("--seek-backward-button", "none");
+  player.style.setProperty("--seek-forward-button", "none");
+  player.style.setProperty("--fullscreen-button", "none");
+  player.style.setProperty("--volume-range", "none");
+  player.style.setProperty("--time-range", "none");
+  player.style.setProperty("--time-display", "none");
+  player.style.setProperty("--duration-display", "none");
+}
+
 
 const segments = [
   { label: "Fragmento 1", start: 5, end: 10 },
