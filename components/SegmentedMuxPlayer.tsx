@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { MuxPlayer } from "@mux/mux-player-react";
+import MuxPlayer from "@mux/mux-player-react";
+
 
 const segments = [
   { start: 0, end: 5 },
