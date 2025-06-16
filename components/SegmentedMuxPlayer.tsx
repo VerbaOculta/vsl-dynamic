@@ -73,13 +73,13 @@ export default function SegmentedMuxPlayer() {
       }}
     >
       <h2 style={{ color: "#fff", marginBottom: "1rem" }}>{currentSegment.label}</h2>
-     <MuxPlayer
+      <MuxPlayer
         ref={playerRef}
         playbackId={PLAYBACK_ID}
         streamType="on-demand"
         autoPlay
         muted
-        controls={false}
+        defaultHiddenControls="all"        // ✅ Oculta TODOS los controles
         noHotkeys
         defaultHiddenCaptions
         style={{
