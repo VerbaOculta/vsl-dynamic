@@ -86,7 +86,6 @@ export default function SegmentedMuxPlayer() {
           outline: "none",
         }}
         nohotkeys
-        noautoload
         defaultHiddenCaptions
       />
     </div>
