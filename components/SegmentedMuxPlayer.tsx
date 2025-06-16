@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import MuxPlayer from "@mux/mux-player-react";
+import "@mux/mux-player"; // web component registration
 
 const segments = [
   { label: "Fragmento 1", start: 5, end: 10 },
@@ -15,7 +15,6 @@ export default function SegmentedMuxPlayer() {
   const playerRef = useRef<any>(null);
   const [currentSegmentIndex, setCurrentSegmentIndex] = useState(0);
   const [isSeeking, setIsSeeking] = useState(false);
-
   const currentSegment = segments[currentSegmentIndex];
 
   useEffect(() => {
@@ -24,10 +23,10 @@ export default function SegmentedMuxPlayer() {
 
     const handleTimeUpdate = () => {
       if (!isSeeking && player.currentTime >= currentSegment.end) {
-        const nextIndex = currentSegmentIndex + 1;
-        if (nextIndex < segments.length) {
+        const next = currentSegmentIndex + 1;
+        if (next < segments.length) {
           setIsSeeking(true);
-          setCurrentSegmentIndex(nextIndex);
+          setCurrentSegmentIndex(next);
         } else {
           player.pause();
         }
@@ -63,33 +62,22 @@ export default function SegmentedMuxPlayer() {
   }, [currentSegmentIndex]);
 
   return (
-    <div
-      style={{
-        padding: "2rem",
-        textAlign: "center",
-        backgroundColor: "#000",
-        minHeight: "100vh",
-        cursor: "none",
-      }}
-    >
-      <h2 style={{ color: "#fff", marginBottom: "1rem" }}>{currentSegment.label}</h2>
-      <MuxPlayer
+    <div style={{ background: "#000", padding: "2rem", textAlign: "center" }}>
+      <h2 style={{ color: "#fff" }}>{currentSegment.label}</h2>
+      <mux-player
         ref={playerRef}
-        playbackId={PLAYBACK_ID}
-        streamType="on-demand"
-        autoPlay
+        playback-id={PLAYBACK_ID}
+        stream-type="on-demand"
+        auto-play
         muted
-        defaultHiddenControls="all"        // ✅ Oculta TODOS los controles
-        noHotkeys
-        defaultHiddenCaptions
+        default-hidden-controls="all"
+        nohotkeys
         style={{
           width: "100%",
           maxWidth: 900,
-          borderRadius: 12,
-          outline: "none",
+          borderRadius: "12px",
         }}
       />
-
     </div>
   );
 }
