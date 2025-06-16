@@ -1,0 +1,10 @@
+// app/globals.css
+@import "@mux/mux-player/themes/mux-player.css"; /* si usas tema */
+mux-player::part(control-bar),
+mux-player::part(center-controls),
+mux-player::part(controls-container) {
+  display: none !important;
+}
+mux-player {
+  pointer-events: none;
+}
