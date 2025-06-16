@@ -1,4 +1,4 @@
-import VSLPlayer from "@/components/VSLPlayer";
+import VSLPlayer from "../components/VSLPlayer";
 
 export default function Home() {
   const playbackIds = [
