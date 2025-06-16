@@ -2,7 +2,33 @@
 
 import { useEffect, useRef, useState } from "react";
 import "@mux/mux-player"; // web component registration
-import "../globals.css"; 
+<style jsx global>{`
+  mux-player {
+    --controls: none;
+    --dialog: none;
+    --loading-indicator: none;
+    --play-button: none;
+    --live-button: none;
+    --seek-backward-button: none;
+    --seek-forward-button: none;
+    --mute-button: none;
+    --captions-button: none;
+    --airplay-button: none;
+    --pip-button: none;
+    --fullscreen-button: none;
+    --cast-button: none;
+    --playback-rate-button: none;
+    --volume-range: none;
+    --time-range: none;
+    --time-display: none;
+    --duration-display: none;
+    --rendition-menu-button: none;
+    --center-controls: none;
+    --bottom-play-button: none;
+
+    pointer-events: none;
+  }
+`}</style>
 
 const segments = [
   { label: "Fragmento 1", start: 5, end: 10 },
