@@ -79,9 +79,10 @@ export default function SegmentedMuxPlayer() {
         streamType="on-demand"
         autoPlay
         muted
-        controls={false}         // ❗ necesario para ocultar controles
-        noHotkeys
-        defaultHiddenCaptions
+        // 🔥 omitimos `controls` para que NO se muestren
+        // 🔥 usamos atributos vacíos como booleanos HTML
+        nohotkeys
+        defaulthiddencaptions
         style={{
           width: "100%",
           maxWidth: 900,
