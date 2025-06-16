@@ -1,16 +1,12 @@
-import VSLPlayer from "../components/VSLPlayer";
+import SegmentedPlayer from "../components/SegmentedPlayer";
 
 export default function Home() {
-  const playbackIds = [
-    "PLLJ4CuL9LMofLBm5MZZ2Mp02NDr3y7faGatChWrqPb4",
-    "dJncnhnalgoS7khYQIHhPfzqQz9igzYHuGzUjwTBPXA",
-    "402x2M6c00d01pLzE23fvD3RMbSjxufw00RMoylhdCXF023k"
-  ];
-
   return (
     <main>
-      <h1 style={{ padding: "2rem", textAlign: "center" }}>🎥 Codex VSL Dinámico</h1>
-      <VSLPlayer playbackIds={playbackIds} />
+      <h1 style={{ padding: "2rem", textAlign: "center" }}>
+        🎥 VSL desde un solo video (por tramos)
+      </h1>
+      <SegmentedPlayer />
     </main>
   );
 }
