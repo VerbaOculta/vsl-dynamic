@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import "@mux/mux-player"; // web component registration
+import "../globals.css"; 
 
 const segments = [
   { label: "Fragmento 1", start: 5, end: 10 },
