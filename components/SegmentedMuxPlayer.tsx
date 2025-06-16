@@ -5,8 +5,8 @@ import MuxPlayer from "@mux/mux-player-react";
 
 const segments = [
   { label: "Fragmento 1", start: 0, end: 5 },
-  { label: "Fragmento 5", start: 8, end: 15 },
-  { label: "Fragmento 25", start: 30, end: 35 },
+  { label: "Fragmento 5", start: 8, end: 10 },
+  { label: "Fragmento 25", start: 15, end: 17 },
 ];
 
 // Reemplaza este ID por tu verdadero playbackId de Mux
