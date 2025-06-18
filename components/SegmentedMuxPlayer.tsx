@@ -85,6 +85,7 @@ export default function SegmentedMuxPlayer() {
         stream-type="on-demand"
         auto-play
         muted
+        loop
         style={{
           width: "100%",
           maxWidth: 900,
