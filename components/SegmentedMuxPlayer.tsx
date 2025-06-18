@@ -83,8 +83,7 @@ export default function SegmentedMuxPlayer() {
         ref={playerRef}
         playback-id={PLAYBACK_ID}
         stream-type="on-demand"
-        auto-play
-        muted
+        autoplay="muted"
         loop
         style={{
           width: "100%",
